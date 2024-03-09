@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About </title>
+    <link rel="stylesheet" href="abt.css">
+    
+    <style>
+        .kodfun-galeri{
+            display: flex;
+            height: 20rem;
+            gap: 1rem;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .kodfun-galeri > div{
+            flex: 1;
+            border-radius: 1rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            transition: all .8s cubic-bezier(.25, .4, .45, 1.4);
+        }
+
+        .kodfun-galeri>div:hover{
+            flex: 5;
+        }
+        body {
+            background-image: url('bg.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-size: cover; /* This property ensures that the background image covers the entire viewport */
+            background-position: center; /* This property centers the background image */
+            /* You can add more properties to adjust the background image as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+        <img src="prof.jpg" alt="Profile Picture" class="profile-image">
+        </a>
+        <h1>About </h1>
+        <nav>
+            <ul>
+                <!-- <li><a href="index.html">Home</a></li>
+                <li><a href="#contact">Contact</a></li> -->
+                <a href="https://www.instagram.com/bhoomikaaahh/">
+                    <img src="insta.ico" alt="Instagram Profile" class="social-icon">
+                </a>
+                
+                <a href="https://www.linkedin.com/in/bhoomika-surve/">
+                    <img src="linkedin.ico" alt="LinkedIn Profile" class="social-icon">
+                </a>
+                
+               <a href="https://github.com/Bhooomika2605" target="_blank">
+          
+                    <img src="github.ico" alt="GitHub Profile" class = "social-icon">
+              
+                </a>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="kodfun-galeri">
+        <div style="background-image: url('me.jpg');"><</div>
+        <div style="background-image: url('mee.jpg');"><</div>
+        <div style="background-image: url('me3.jpg');"><</div>
+        <div style="background-image: url('me7.jpg');"><</div>
+        <div style="background-image: url('me9.jpg');"><</div>
+        <!-- <div style="background-image: url('prot.jpg');"><</div> -->
+        <div style="background-image: url('me4.jpg');"><</div>
+    </div>
+
+    <script>
+       
+        const gallery = document.querySelector('.kodfun-galeri');
+        const slides = gallery.querySelectorAll('div');
+        
+        let currentIndex = 0;
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.flex = i === index ? '5' : '1';
+            });
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+        
+        // Set interval for auto slideshow
+        let interval = setInterval(nextSlide, 1000);
+        
+        // Stop the slideshow when the mouse enters the gallery
+        gallery.addEventListener('mouseenter', () => clearInterval(interval));
+        
+        // Restart the slideshow when the mouse leaves the gallery
+        gallery.addEventListener('mouseleave', () => {
+            clearInterval(interval);
+            interval = setInterval(nextSlide, 1000);
+        });
+        
+    </script>
+    
+
+    <section class="about-section">
+        <h2>Introduction</h2>
+        <p>Hello! I'm Bhoomika Surve, a passionate second-year computer engineering student with a deep love for programming. From the moment I discovered the power of coding, Python captured my interest like no other language. Its simplicity, versatility, and elegance never fail to amaze me.
+
+        Growing up in a world driven by technology, I developed a keen interest in understanding how computers work and how they can be leveraged to solve real-world problems. This curiosity led me to pursue a degree in computer engineering, where I'm constantly learning and exploring the intricacies of software development, algorithms, and computer systems.
+        
+        Beyond the technical aspects, I'm also fascinated by the creative potential of programming. Whether it's building innovative solutions, designing elegant algorithms, or crafting beautifully structured code, I find joy in the artistry of software development.
+        
+        What truly motivates me is the opportunity to make a meaningful impact with my skills. Whether it's developing software that improves efficiency, enhances user experiences, or tackles important societal issues, I'm driven by the desire to contribute positively to the world through technology.
+        
+        Outside of academics, I enjoy exploring new programming concepts, participating in coding competitions, and collaborating on open-source projects. I also have a passion for [mention any other interests or hobbies], which provide a welcome balance to my technical pursuits.
+        
+        In essence, I'm a dedicated learner, an enthusiastic programmer, and a believer in the transformative power of technology. I'm excited about the endless possibilities that lie ahead and eager to continue my journey of growth and discovery in the world of computer engineering..</p>
+    </section>
+
+    <section class="skills-section">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>C/C++</li>
+            <li>Java</li>
+            <!-- List your skills here -->
+        </ul>
+    </section>
+
+    <section class="experience-section">
+        <h2>Experience</h2>
+        <p>Describe your relevant experience. This could include previous jobs, internships, or projects.</p>
+    </section>
+
+    <section class="education-section">
+        <h2>Education</h2>
+        <p>Detail your educational background. Include your degree, major, and any relevant coursework or achievements.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bhoomika Surve</p>
+    </footer>
+</body>
